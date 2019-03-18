@@ -1,2 +1,24 @@
-<h1>事件</h1>
+<h1>想做的事情</h1>
+ 
+<div class="container">
+    <%= form_for(@list) do |f| %>
+        <%= f.text_area :content, placeholder: "请输入要记的事件"%>
+        <%= f.submit "创建" , class: "btn btn-large btn-primary" %>
+    <% end %>
+</div>
 
+<div class="center">
+    代办事情( <%= @lists.count%> )条
+</div>
+<p>
+
+<div class="center">
+    <% @lists.each do |list| %>
+        <li>
+            <%= list.content %>
+            <%= link_to "删除",list, method: :delete%>
+            <%= link_to "编辑", edit_list_path(list) %>
+            <p>
+        </li>
+    <% end %>
+</div>

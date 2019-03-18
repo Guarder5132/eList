@@ -1,0 +1,6 @@
+<% provide(:title, 'Edit')  %>
+<%= form_for(@list) do |f|%>
+    <%= f.label :content, "修改事件"%>
+    <%= f.text_field :content%> 
+    <%= f.submit "更改", class: "btn btn-large btn-primary" %>
+<% end %>
